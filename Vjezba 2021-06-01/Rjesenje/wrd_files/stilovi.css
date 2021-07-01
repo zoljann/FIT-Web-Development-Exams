@@ -24,7 +24,7 @@ textarea{
     width: 100%;
 }
 .zaFormu input{
-    border-bottom-right-radius: 18%;
+    border-bottom-right-radius: 10px;
 }
 input,.form{
     width: 100%;
@@ -34,8 +34,8 @@ input,.form{
 }
 .srednji{
     width: 60%;
-    border-top-right-radius: 10%;
-    border-bottom-right-radius:10%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius:80px;
     text-align: center;
     overflow: scroll;
 }
@@ -52,8 +52,8 @@ tr, td, th{
 .desni{
     width: 20%;
     background-color: rgb(109, 109, 109);
-    border-top-left-radius: 10%;
-    border-bottom-left-radius: 10%;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
     padding: 2%;
 }
 
