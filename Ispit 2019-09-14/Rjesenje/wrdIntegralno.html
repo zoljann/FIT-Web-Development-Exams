@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WRD ispit</title>
+  <link rel="stylesheet" type="text/css" href="./wrd_files/stilovi.css">
+  <script src="./external/jquery/jquery.js"></script>
+  <script src="./jquery-validation-1.16.0/dist/jquery.validate.js"></script>
+
+</head>
+<body> 
+
+  
+  <div id="providnoNav">
+    <nav>
+      <div style="text-align: left;font-size:30px;padding: 20px;">
+          <a id="IzbornikDugme">☰</a><span>BROJ INDEXA</span>
+      </div>
+
+        <div id="Izbornik" style="clear:both">
+      <a class="IzbornikStavka" href="#">Home</a> 
+      <a class="IzbornikStavka" href="#">AMF 1</a> 
+      <a class="IzbornikStavka" href="#">AMF 2</a> 
+      <a class="IzbornikStavka" href="#">AMF 3</a> 
+    </div>
+    </nav>
+</div>
+<div id="wrapper">
+  <table id="proizvodi">
+  <thead>
+    <th>ID</th>
+    <th>Likes</th>
+    <th>Naziv</th>
+    <th style="width:10%;">Slika</th> 
+    <th>cijena/m2</th>
+    <th>Like</th>
+    <th>Odaberi</th>
+  </thead>
+  <tbody></tbody>
+
+  </table>
+
+  <div>
+    <form id="forma">
+      <label for="dostavaIme">Ime</label>
+      <input id="dostavaIme" name="dostavaIme"  placeholder="kupac ime">
+
+      <label for="dostavaAdresa">Adresa</label>
+      <input id="dostavaAdresa"  name="dostavaAdresa" placeholder="kupac adresa">
+
+      <label for="dostavaGrad">Grad</label>
+      <input id="dostavaGrad" name="dostavaGrad" value="" placeholder="Unesite grad">
+
+      <label for="dostavaTelefon">Telefon</label>
+      <input id="dostavaTelefon" name="dostavaTelefon" placeholder="+387-61-888-8888">
+
+      
+      <label for="idProizvoda">ID Proizvoda</label>
+      <input id="idProizvoda" name="idProizvoda" placeholder="Id proizvoda">
+
+      <label for="nazivProizvoda">Naziv proizvoda</label>
+      <input id="nazivProizvoda" name="nazivProizvoda" placeholder="naziv proizvoda">
+      
+      <label for="kolicina">Kolicina</label>
+
+      <input id="kolicina" name="kolicina" placeholder="kolicina">
+      
+      <label for="opcija">Opcija</label>
+      <select id="opcija" name="opcija">
+        <option value="Nije odabrano">Nije odabrano</option>
+      </select>
+  
+      <br>
+      <input type="submit" id="naruci" value="Naruči">
+  </form>
+  </div>
+
+  <table id="narudzbe">
+    <thead>
+      <th>ID</th>
+      <th>Naziv</th>
+      <th>Cijena</th>
+      <th>Kolicina</th>
+      <th>Iznos</th>
+      <th>Ime</th>
+      <th>Adresa</th>
+      <th>Datum</th>
+      <th>Telefon</th>
+
+    </thead>
+
+  
+    <tbody></tbody>
+
+
+  </table>
+
+<script src="./wrd_files/script.js"></script>
+</body>
+</html>
+
