@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+nav{
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    background-color: rgb(68, 134, 255);
+    color: white;
+}
+#dugmic{
+    padding-left: 10%;
+}
+.IzbornikStavka{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-left:40px;
+    margin-top: 12px;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 3%;
+}
+.IzbornikStavka:hover{
+    background-color: rgba(96, 165, 255, 0.726);
+    width: 60%;
+}
+#wrapper{
+    height: 100%;
+    width: 70%;
+    margin-left: 30%;
+    padding: 3%;
+}
+#wrapper h1{
+    font-size: 45pt;
+}
+hr{
+    width: 10%;
+}
+img{
+    width: 250px;
+    height: 180px;
+}
+img:hover{
+    opacity: 70%;
+}
+.VilaKolonaWrapper{
+    width: 33%;
+}
+.Kontejner{
+    display: flex;
+    text-align: center;
+}
+#ispod{
+    position:absolute;
+    top: 50%;
+    padding-top: 5%;
+    padding-right: 3%;
+}
+input{
+    width: 100%;
+    padding: 1%;
+}
+#forma{
+    text-align: left;
+}
+.error{
+    color: red;
+}
+.valid{
+   color: green;
+}
+@media(max-width:600px){
+    body{
+        flex-direction: column;
+    }
+   #ispod{
+       display: none;
+   }
+   nav{
+       width: 100%;
+       height: 28%;
+       position:relative;
+   }
+   #dugmic{
+       padding-left: 3%;
+   }
+   .IzbornikStavka{
+       text-align: center;
+       width: 100%;
+       margin:0;
+       padding: 0;
+       font-size: 12pt;
+   }
+   #wrapper{
+       width: 100%;
+       margin: 0;
+       padding: 0;
+   }
+   .VilaKolonaWrapper{
+       width: 100%;
+   }
+   #wrapper h1{
+       font-size: 35pt;
+   }
+   .Kontejner{
+       flex-direction: column;
+       width: 100%;
+   }
+}
