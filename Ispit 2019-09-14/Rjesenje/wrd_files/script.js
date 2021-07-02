@@ -61,6 +61,13 @@ function popuniPodatke(podaci){
         red.appendChild(cijena);
         cijena.innerHTML=podaci[i].cijenaPoKvadratu;
 
+        let buttonLike=document.createElement("td");
+        red.appendChild(buttonLike);
+        buttonLike.innerHTML='<button id="like">Like</button>';
+
+        let buttonOdaberi=document.createElement("td");
+        red.appendChild(buttonOdaberi);
+        buttonOdaberi.innerHTML='<button id="odaberi">Odaberi</button>'
     }
 }
 function podaci() {
@@ -80,7 +87,7 @@ function podaci() {
 
         });
 }
-podaci();
+
 
 function popuniNarudzbe(podaci){
     for(let i=0;i<podaci.length;i++){
@@ -142,7 +149,6 @@ function narudzbe() {
 
         });
 }
-narudzbe();
 
 
 $("#naruci").on("click", function() {
@@ -182,3 +188,12 @@ fetch("http://onlineshop.wrd.app.fit.ba/api/ispit20190914/Narudzba/Dodaj", { //f
             });
 
 });
+
+podaci(); //na prvom ucitavanju stranice ucitajemo podatke i narudzbe
+narudzbe();
+
+//ukoliko treba padajuci meni da se otvara i zatvara na klik, nije potrebno u zadatku ali najlaksi nacin da se odradi
+/*$("#IzbornikDugme").on("click", function() {
+    $("#Izbornik").toggle();
+ });
+*/
