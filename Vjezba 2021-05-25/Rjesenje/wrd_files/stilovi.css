@@ -11,13 +11,17 @@ html, body{
     height: 100%;
 }
 body{
-    background-image: url("jezero.jpg");
+    background: url("jezero.jpg") fixed no-repeat;
 }
 .tamni{
     width: 25%;
+    position: fixed;
+    height: 100%;
 }
 .svijetli{
+    margin-top: -5px;
     width: 75%;
+    margin-left: 25%;
 }
 .svijetliGornji{
     height: 50%;

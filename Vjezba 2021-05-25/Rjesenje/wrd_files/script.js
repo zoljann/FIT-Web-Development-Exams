@@ -70,6 +70,41 @@ function podaci() {
 
         });
 }
+
+$("#prijava").on("click",function(){
+
+    var uploaduj={
+        Ime:$("#dostavaIme").val(),
+        Adresa:$("#dostavaAdresa").val(),
+        Grad:$("#dostavaGrad").val(),
+        Telefon:$("#dostavaTelefon").val(),
+    }
+    fetch("http://onlineshop.wrd.app.fit.ba/api/ispit20190914/Narudzba/Dodaj", { //fetchujemo preko linka za dodavanje narudzbe
+    method: 'POST', 
+    headers: {
+        'Content-Type': 'application/json', 
+    },
+    body: JSON.stringify(uploaduj), //stringify sluzi da prebacimo iz objekta njegov JSON format, jer samo JSONov format prima podatke
+})
+    .then((r) => {
+        if (r.status != 200) {
+            alert("Server javlja gresku: " + r.status);
+            return;
+        }
+        //ako je sve proslo ok pozivamo funkciju da popuni narudzbe i osvjezavamo formu
+        r.json().then(x => {
+            console.log("Uspjesno",x);
+            popuniNarudzbe(x); 
+            $("#forma")[0].reset(); 
+        });
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+});
+
+
 function najviseLajkova(){
     var najveci=100000;
     let naziv;
