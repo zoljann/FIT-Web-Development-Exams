@@ -12,13 +12,13 @@ $(".zaFormu").validate({
             required:true,
             regex: /^[A-Z][a-zA-Z ]+[A-Z][a-zA-Z]+$/
         },
-        BrojIndeksa:{
+        Adresa:{
             required:true,
-            regex: /^[0-9]{6}$/
+            regex: /^[a-zA-Z]+\s?[a-zA-Z]+\s?([0-9]{1,})?$/
         },
-        Telefon:{
+        LicniBrojKupca:{
             required:true,
-            regex:/^\+[0-9]{3}-[0-9]{2}-[0-9]{3}-[0-9]{4}$/
+            regex:/^[[I][D][\/][0-9]{3}-[0-9]{3}-[A-Z]{3}$/
         }
     }
 })
