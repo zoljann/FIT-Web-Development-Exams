@@ -94,3 +94,38 @@ function srednjaCijena(){
     }
     alert("Prosjecna cijena svih proizvoda iznosi : " + prosjek+ " KM");
 }
+
+$("#mojeDugme").on("click",function(){
+
+    var uploaduj={
+        Ime:$("#Ime").val(),
+        Adresa:$("#Adresa").val(),
+        Grad:$("#Grad").val,
+        LicniBrojKupca:$("#LicniBrojKupca").val(),
+    }
+
+    fetch("https://onlineshop.wrd.app.fit.ba/s/api/ispit20190622/Narudzba/Dodaj", {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(uploaduj)
+    })
+        .then((r) => {
+            if (r.status != 200) {
+                alert("Server javlja gresku: " + r.status);
+                return;
+            }
+
+            r.json().then(x => {
+                popuniPodatke(x);
+            });
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+        
+
+})
+
