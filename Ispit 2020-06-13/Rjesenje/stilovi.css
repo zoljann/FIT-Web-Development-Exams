@@ -100,7 +100,7 @@ img:hover{
     }
     .IzbornikStavka{
         display: inline;
-        padding:4%;
+        padding:2%;
         font-size: 13pt;
         border-bottom: 2px solid rgb(205, 233, 255);
     }
