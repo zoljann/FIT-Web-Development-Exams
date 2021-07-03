@@ -106,7 +106,7 @@ $("#prijava").on("click",function(){
 
 
 function najviseLajkova(){
-    var najveci=100000;
+    var najveci=0;
     let naziv;
    for(let i=0;i<sviProizvodi.length ;i++){
        if(najveci<sviProizvodi[i].likeCounter) {
