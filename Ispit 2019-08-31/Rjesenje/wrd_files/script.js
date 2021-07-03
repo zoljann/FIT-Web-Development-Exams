@@ -126,6 +126,59 @@ $("#dodaj").on("click",function(){
 
 });
 
+function popuniNarudzbe(podaci){
+    for(let i=0;i<podaci.length;i++){
+        let red=document.createElement("tr");
+        document.getElementById("narudzbe").appendChild(red);
+        
+        let IDproizvoda=document.createElement("td");
+        red.appendChild(IDproizvoda);
+        IDproizvoda.innerHTML=podaci[i].proizvodID;
+
+        let Naziv=document.createElement("td");
+        red.appendChild(Naziv);
+        Naziv.innerHTML=podaci[i].naziv;
+
+        let cijena=document.createElement("td");
+        red.appendChild(cijena);
+        cijena.innerHTML=podaci[i].cijena;
+
+        let kolicina=document.createElement("td");
+        red.appendChild(kolicina);
+        kolicina.innerHTML=podaci[i].kolicina;
+
+        let ime=document.createElement("td");
+        red.appendChild(ime);
+        ime.innerHTML=podaci[i].dostavaIme;
+
+        let adresa=document.createElement("td");
+        red.appendChild(adresa);
+        adresa.innerHTML=podaci[i].dostavaAdresa;
+
+        let telefon=document.createElement("td");
+        red.appendChild(telefon);
+        telefon.innerHTML=podaci[i].dostavaTelefon;
+    }
+}
+function narudzbe() {
+    fetch("http://onlineshop.wrd.app.fit.ba/api/ispit20190914/Narudzba/GetNarudzbeAll")
+        .then((r) => {
+            if (r.status != 200) {
+
+                return;
+            }
+
+            r.json().then((x) => {
+                popuniNarudzbe(x);
+            });
+
+        })
+        .catch((error) => {
+
+        });
+}
+narudzbe();
+
 function Lajkuj(id){
     var url = "https://onlineshop.wrd.app.fit.ba/api/ispit20190829/Narudzba/Like?proizvodId="+id;
 

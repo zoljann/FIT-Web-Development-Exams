@@ -21,6 +21,7 @@ body,html{
     color: white;
     padding: 3%;
     overflow-y: scroll;
+    position: fixed;
 }
 input{
     width: 100%;
@@ -36,6 +37,7 @@ input{
 #desno{
     width: 50%;
     height: 100%;
+    margin-left: 50%;
 }
 #gornji{
     height: 50%;
@@ -87,8 +89,10 @@ table,tr,td{
 }
 #desno{
 height: 40%;
+position: relative;
+margin: 0;
 }
-#gornji,gornji{
+#gornji{
     height: 100%;
 }
 #lijevo,#desno,nav{
