@@ -63,7 +63,7 @@ function popuniPodatke(podaci){
 
         let buttonLike=document.createElement("td");
         red.appendChild(buttonLike);
-        buttonLike.innerHTML='<button id="like">Like</button>';
+        buttonLike.innerHTML='<button onclick="lajkuj('+podaci[i].proizvodID+')" id="like">Like</button>';
 
         let buttonOdaberi=document.createElement("td");
         red.appendChild(buttonOdaberi);
@@ -191,6 +191,27 @@ fetch("http://onlineshop.wrd.app.fit.ba/api/ispit20190914/Narudzba/Dodaj", { //f
 
 podaci(); //na prvom ucitavanju stranice ucitajemo podatke i narudzbe
 narudzbe();
+
+
+function lajkuj(id){
+    var url = "https://onlineshop.wrd.app.fit.ba/api/ispit20190829/Narudzba/Like?proizvodId="+id;
+
+    fetch(url)
+        .then((r) => {
+            if (r.status != 200) {
+                alert("Server javlja grešku: "+r.status);
+                return;
+            }
+
+            r.json().then((x) => {
+                ++x.likeCounter;
+            });
+
+        })
+        .catch((error) => {
+            console.log("Greska: "+error);
+        });
+}
 
 //ukoliko treba padajuci meni da se otvara i zatvara na klik, nije potrebno u zadatku ali najlaksi nacin da se odradi
 /*$("#IzbornikDugme").on("click", function() {
