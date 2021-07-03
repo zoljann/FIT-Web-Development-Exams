@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+}
+#glavni{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+#lijevo{
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    padding: 3%;
+    overflow-y: scroll;
+}
+input{
+    width: 100%;
+    border: none;
+    background-color: black;
+    border-bottom: 3px solid blue;
+    margin-top: 15px;
+    color: white;
+}
+#dodaj{
+    color: white;
+}
+#desno{
+    width: 50%;
+    height: 100%;
+}
+#gornji{
+    height: 50%;
+    background:url("slika.jpg");
+    background-size: cover;
+}
+nav{
+    height: 100%;
+    width: 30%;
+    background-color: rgba(22, 123, 255, 0.425);
+}
+span,#IzbornikDugme{
+    color:rgba(255, 255, 255, 0.589);
+}
+
+.IzbornikStavka{
+    display: block;
+    text-decoration: none;
+    color:rgba(255, 255, 255, 0.589);
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 25px;
+
+}
+.tableispodDesno{
+    height: 50%;
+}
+#dugme{
+    margin-left: 20px;
+}
+.IzbornikStavka:hover{
+    background-color: rgba(0, 135, 212, 0.733);
+}
+table,tr,td{
+    text-align: center;
+}
+#dodaj{
+    font-size: 13pt;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+@media(max-width:600px){
+.tableispodDesno{
+    display: none;
+}
+#glavni{
+    height: 100%;
+    flex-direction: column-reverse;
+}
+#gornji{
+    height: 100%;
+}
+#lijevo,#desno,nav{
+    width: 100%;
+}
+#lijevo{
+    position:relative;
+    height: 100%;
+}
+.IzbornikStavka{
+    display: inline;
+    margin-left: 30px;
+}
+}
