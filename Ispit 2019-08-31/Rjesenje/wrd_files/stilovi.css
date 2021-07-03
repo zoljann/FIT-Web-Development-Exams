@@ -85,7 +85,10 @@ table,tr,td{
     height: 100%;
     flex-direction: column-reverse;
 }
-#gornji{
+#desno{
+height: 40%;
+}
+#gornji,gornji{
     height: 100%;
 }
 #lijevo,#desno,nav{
@@ -99,4 +102,13 @@ table,tr,td{
     display: inline;
     margin-left: 30px;
 }
+#Izbornik{
+    text-align: center;
+}
+.IzbornikStavka{
+margin: 0;
+padding-left: 3%;
+padding-right: 3%;
+}
+
 }
