@@ -31,6 +31,32 @@ $("#forma").validate({
         }
     }
 })
+function popuniDivove(podaci){
+    for(let i=0;i<podaci.length;i++){
+      
+        
+
+        
+    }
+}
+function podaci() {
+    fetch("https://restapiexample.wrd.app.fit.ba/Ispit20210702/Get4Studenta")
+        .then((r) => {
+            if (r.status != 200) {
+
+                return;
+            }
+
+            r.json().then((x) => {
+
+            });
+
+        })
+        .catch((error) => {
+
+        });
+}
+
 
 $("#IzbornikDugme").on("click", function(){
     $("#Izbornik").toggle();

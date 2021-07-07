@@ -65,12 +65,16 @@
    p{
      padding-top: 1%;
    }
-   #radnik{
+   #radnik,#radnik1,#radnik2,#radnik3{
      width: 25%;
+     padding: 1%;
    }
-   #radnik img{
+   #RadnikKontejner{
+     display: flex;
+   }
+   #RadnikKontejner img{
      width: 100%;
-     height: 100%;
+     border: 1px solid black;
    }
   #tekstRadnika h3,p{
     text-align: left;
