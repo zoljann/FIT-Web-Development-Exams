@@ -31,33 +31,44 @@ $("#forma").validate({
         }
     }
 })
-function popuniDivove(podaci){
-    for(let i=0;i<podaci.length;i++){
-      
-        
 
-        
+const getPodatke = (callback, url) => {
+    var zahtjev = new XMLHttpRequest();
+
+    zahtjev.onload = () => {
+        if (zahtjev.status === 200) {
+            callback(JSON.parse(zahtjev.responseText));
+        } else {
+            alert("Server javlja grešku: " + zahtjev.statusText);
+        }
+    };
+
+    zahtjev.onerror = () => {
+        alert("Greška u komunikaciji sa serverom.");
+    };
+
+    zahtjev.open("GET", url, true);
+    zahtjev.send(null);
+};
+
+let urlGet4Radnika =
+    "https://restapiexample.wrd.app.fit.ba/Ispit20210702/Get4Studenta";
+
+const kreirajRadnika = (obj) => {
+    return `<img src="${obj.slikaPutanja}"/>
+        <h3>${obj.imePrezime}</h3>
+        <p>${obj.opis}</p>`;
+};
+
+const postaviRadnike = (obj) => {
+    var containers = document.querySelectorAll("[id^=radnik]");
+
+    for (var i = 0; i < obj.length; i++) {
+        containers[i].innerHTML = kreirajRadnika(obj[i]);
     }
-}
-function podaci() {
-    fetch("https://restapiexample.wrd.app.fit.ba/Ispit20210702/Get4Studenta")
-        .then((r) => {
-            if (r.status != 200) {
+};
 
-                return;
-            }
-
-            r.json().then((x) => {
-
-            });
-
-        })
-        .catch((error) => {
-
-        });
-}
-
-
+getPodatke(postaviRadnike, urlGet4Radnika);
 $("#IzbornikDugme").on("click", function(){
     $("#Izbornik").toggle();
 })
