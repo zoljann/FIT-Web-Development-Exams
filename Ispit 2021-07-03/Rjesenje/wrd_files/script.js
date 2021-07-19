@@ -10,7 +10,7 @@ $("#forma").validate({
     rules:{
         naslov:{
             required:true,
-            regex: /^[A-Z][a-zA-Z]\s[a-zA-Z]+$/
+            regex: /^[A-Z][a-zA-Z]+\s[a-zA-Z]+$/
         },
         telefon:{
             required:true,
