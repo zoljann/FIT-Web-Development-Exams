@@ -32,43 +32,7 @@ $("#forma").validate({
     }
 })
 
-const getPodatke = (callback, url) => {
-    var zahtjev = new XMLHttpRequest();
 
-    zahtjev.onload = () => {
-        if (zahtjev.status === 200) {
-            callback(JSON.parse(zahtjev.responseText));
-        } else {
-            alert("Server javlja grešku: " + zahtjev.statusText);
-        }
-    };
-
-    zahtjev.onerror = () => {
-        alert("Greška u komunikaciji sa serverom.");
-    };
-
-    zahtjev.open("GET", url, true);
-    zahtjev.send(null);
-};
-
-let urlGet4Radnika =
-    "https://restapiexample.wrd.app.fit.ba/Ispit20210702/Get4Studenta";
-
-const kreirajRadnika = (obj) => {
-    return `<img src="${obj.slikaPutanja}"/>
-        <h3>${obj.imePrezime}</h3>
-        <p>${obj.opis}</p>`;
-};
-
-const postaviRadnike = (obj) => {
-    var containers = document.querySelectorAll("[id^=radnik]");
-
-    for (var i = 0; i < obj.length; i++) {
-        containers[i].innerHTML = kreirajRadnika(obj[i]);
-    }
-};
-
-getPodatke(postaviRadnike, urlGet4Radnika);
-$("#IzbornikDugme").on("click", function(){
+$("#IzbornikDugme").on("click", function(){ //padajuci meni za telefon
     $("#Izbornik").toggle();
 })
