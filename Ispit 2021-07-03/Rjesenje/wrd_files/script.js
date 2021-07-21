@@ -31,6 +31,38 @@ $("#forma").validate({
         }
     }
 })
+getPodatke = (postavi) => {
+    fetch("https://restapiexample.wrd.app.fit.ba/Ispit20210702/Get4Studenta")
+        .then((r) => {
+            if (r.status != 200) {
+                console.log("Doslo je do greske!");
+                return;
+            }
+
+            r.json().then((x) => {
+                postavi(x);
+            });
+
+        })
+        .catch((error) => {
+            alert(error);
+        });
+}
+kreirajRadnika = (obj) =>{
+    return `<img src="${obj.slikaPutanja}"/>
+    <div id="tekstRadnika">
+        <h3>${obj.imePrezime}</h3>
+        <p>${obj.opis}</p>
+        <button>Piši poruku</button>
+    </div>`;
+}
+postaviRadnika = (obj)=>{
+    var dohvatiRadnika= document.querySelectorAll("[id^=radnik]")
+    for(let i=0; i<obj.length; i++){
+        dohvatiRadnika[i].innerHTML=kreirajRadnika(obj[i]);
+    }
+}
+getPodatke(postaviRadnika);
 
 
 $("#IzbornikDugme").on("click", function(){ //padajuci meni za telefon
