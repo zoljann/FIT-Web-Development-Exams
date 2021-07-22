@@ -135,4 +135,10 @@
       margin: 0;
       width: 100%;
     }
+    #radnik,#radnik1,#radnik2,#radnik3{
+      width: 50%;
+    }
+    #RadnikKontejner{
+      flex-wrap: wrap;
+    }
    }
