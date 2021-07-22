@@ -89,7 +89,7 @@ posaljiPoruku = (podaci) => {
 
 posalji = () => {
     let poruka = {
-        imePrezime: document.getElementById("primaoc").value(),
+        imePrezime: document.getElementById("primaoc").value,
         naslov: document.getElementById("naslov").value,
         telefon: document.getElementById("telefon").value,
         poruka: document.getElementById("poruka").value,
