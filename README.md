@@ -1,3 +1,3 @@
 # Web Development
-Exams from web development and desing. <br>
+Web development exams. <br>
 - HTML, CSS, Javascript, jquery, regex.
